@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Xml;
 namespace M1N3SW33P3R
 {
     public partial class form1 : Form
@@ -15,7 +15,7 @@ namespace M1N3SW33P3R
         public form1()
         {
             InitializeComponent();
-            StartMenu st = new StartMenu();
+            StartMenu st = new StartMenu(this.FindForm());
             this.Controls.Add(st);
         }
     }

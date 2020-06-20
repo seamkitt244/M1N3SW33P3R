@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<highscores>
+  <!--<highscorers10x10>-->
+    <player>
+      <name>Legend27</name>
+      <time>690000</time>
+      <place>1</place>
+      <date>20200610</date>
+    </player>
+  <!--</highscorers10x10>-->
+  <highscorers16x16>
+    <player>
+      <name>Legend27</name>
+      <time>690000</time>
+      <place>1</place>
+      <date> 20200612</date>
+    </player>
+  </highscorers16x16>
+  <highscorers30x30>
+    <player>
+      <name>Legend27</name>
+      <time>690000</time>
+      <place>1</place>
+      <date> 20200619</date>
+    </player>
+  </highscorers30x30>
+</highscores>

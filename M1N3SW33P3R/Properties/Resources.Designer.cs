@@ -73,6 +73,36 @@ namespace M1N3SW33P3R.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap clickedBlock {
+            get {
+                object obj = ResourceManager.GetObject("clickedBlock", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap clickedFlagBlock {
+            get {
+                object obj = ResourceManager.GetObject("clickedFlagBlock", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dead {
+            get {
+                object obj = ResourceManager.GetObject("dead", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap eightBlock {
             get {
                 object obj = ResourceManager.GetObject("eightBlock", resourceCulture);
@@ -116,6 +146,130 @@ namespace M1N3SW33P3R.Properties {
         internal static System.Drawing.Bitmap gameStart {
             get {
                 object obj = ResourceManager.GetObject("gameStart", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1
+        ///Legend27
+        ///130
+        ///2
+        ///bobby
+        ///189
+        ///3
+        ///krance
+        ///230
+        ///4
+        ///gracein
+        ///246
+        ///5 
+        ///grag
+        ///223
+        ///6
+        ///davide
+        ///245
+        ///7
+        ///crannst
+        ///245
+        ///8
+        ///moller
+        ///286
+        ///9
+        ///vivan
+        ///312
+        ///10
+        ///grogre
+        ///401.
+        /// </summary>
+        internal static string highScores {
+            get {
+                return ResourceManager.GetString("highScores", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1
+        ///Legend27
+        ///130
+        ///2
+        ///bobby
+        ///189
+        ///3
+        ///krance
+        ///230
+        ///4
+        ///gracein
+        ///246
+        ///5 
+        ///grag
+        ///223
+        ///6
+        ///davide
+        ///245
+        ///7
+        ///crannst
+        ///245
+        ///8
+        ///moller
+        ///286
+        ///9
+        ///vivan
+        ///312
+        ///10
+        ///grogre
+        ///401.
+        /// </summary>
+        internal static string highScoresHrd {
+            get {
+                return ResourceManager.GetString("highScoresHrd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1
+        ///Legend27
+        ///130
+        ///2
+        ///bobby
+        ///189
+        ///3
+        ///krance
+        ///230
+        ///4
+        ///gracein
+        ///246
+        ///5 
+        ///grag
+        ///223
+        ///6
+        ///davide
+        ///245
+        ///7
+        ///crannst
+        ///245
+        ///8
+        ///moller
+        ///286
+        ///9
+        ///vivan
+        ///312
+        ///10
+        ///grogre
+        ///401.
+        /// </summary>
+        internal static string highScoresMed {
+            get {
+                return ResourceManager.GetString("highScoresMed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hover {
+            get {
+                object obj = ResourceManager.GetObject("hover", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -186,6 +340,16 @@ namespace M1N3SW33P3R.Properties {
         internal static System.Drawing.Bitmap sun {
             get {
                 object obj = ResourceManager.GetObject("sun", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sunnies {
+            get {
+                object obj = ResourceManager.GetObject("sunnies", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -223,6 +223,7 @@
             this.highScoreButton.TabIndex = 15;
             this.highScoreButton.Text = "High Scores";
             this.highScoreButton.UseVisualStyleBackColor = true;
+            this.highScoreButton.Click += new System.EventHandler(this.highScoreButton_Click);
             // 
             // StartMenu
             // 

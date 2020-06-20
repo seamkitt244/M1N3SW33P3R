@@ -11,94 +11,105 @@ using System.Windows.Forms;
 using System.IO;
 
 namespace M1N3SW33P3R
-{
+{/// <summary>
+/// Minesweeper clone program Seamus Kittmer June 18, 2020
+/// </summary>
     public partial class GameScreen : UserControl
     {
-        private GameScreen gameArea;
-        form1 form = new form1();
-        public static int blockXOrg = 10;
-        int blockX = 10;
-        int blockY = 60;
-        int blockSize = 30;
-        int numMines = 0;
-        Boolean mine, clicked = false;
-        Boolean firstClick = true;
-        Brick brick;
-        Blocks block;
+        #region Variables
+        private Grid grid;
+        private HighScore highScore;
+        private GameScreen gameScreen;
+        Form form = new Form();
 
-        int mineCount = 0;
-        public GameScreen(int boardSize)
-        {
-            InitializeComponent();
-            OnStart();
-        }
-        List<Button> buttonList = new List<Button>();
         List<Blocks> blocksList = new List<Blocks>();
-        Blocks tempBlock;
+        List<Button> buttonList = new List<Button>();
 
-        int gridSize = 100;
-        int gridLength = 10;
+        public int blockSize = 30;
+        public static int blockXOrg = 10;
 
-        int numOfMines = 10;
-        PictureBox tempPictureBox = new PictureBox();
+        Boolean gameOver = false;
+        public Boolean mode = false;
 
-        int rows = 10;
-        int columns = 10;
-
-        //stopwatch
-        Stopwatch stopwatch = new Stopwatch();
-        TimeSpan elapsed;
+        int size;
+        int diff;
         int pause = 0;
         int theme = 0;
+
+        Stopwatch stopwatch = new Stopwatch();
+        TimeSpan elapsed;
+
+        double score;
+
+       
+        #endregion
+
+        public GameScreen(int _size,int _diff, Form _form)
+        {
+            InitializeComponent();
+
+            form = _form;
+            OnStart();
+            diff = _diff;
+            size = _size;
+
+            grid = new Grid(size,diff, blocksList, buttonList, form, this);
+        }
+
         public void OnStart()
         {
+            gameOver = false;
             blocksList.Clear();
             buttonList.Clear();
-            for (int i = 0; i < gridLength * gridLength; i++)
-            {
-                if (blockX > blockXOrg + (gridLength * blockSize) - blockSize)
-                {
-                    blockX = blockXOrg;
-                    blockY = blockY + blockSize;
-                }
-                Blocks tempBlock = new Blocks(blockSize, blockX, blockY, numMines, mine, clicked);
-                blocksList.Add(tempBlock);
-                blockX = blockX + blockSize;
-            }
-            MakeMines();
-            PlaceNumbers();
-            int n = 0;
-            foreach (Blocks b in blocksList)//creating buttons
-            {
-                Button button = new Button
-                {
-                    Name = "button" + blocksList[n],
-                    Size = new Size(blockSize, blockSize),
-                    Location = new Point(b.x, b.y),
-                    BackgroundImage = Properties.Resources.smile,
-                    BackgroundImageLayout = ImageLayout.Stretch,
-                    Visible = true
-                };
-                buttonList.Add(button);
-                this.Controls.Add(button);
-                n++;
-            }
             timer1.Start();
+            Refresh();
+            
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
             stopwatch.Start();
-            for (int i = 0; i < buttonList.Count; i++)
-            {
-                buttonList[i].MouseDown += MyButtonClickHandler;
-            }
+            grid.EnoughFlags();
+            score = stopwatch.Elapsed.TotalSeconds;
             elapsed = stopwatch.Elapsed;
             timerLabel.Text = elapsed.TotalSeconds.ToString("0.0") + "";
+
+                Refresh();
         }
+        public void GameLose()
+        {
+            endLabel.Visible = true;
+            endLabel.Text = "you lost";
+            pauseButton.BackgroundImage = Properties.Resources.dead;
+            timer1.Stop();//game lose method
+            stopwatch.Stop();
+            gameOver = true;
+        }
+        public void GameWin()
+        {
+            timer1.Stop();
+            stopwatch.Stop();
+            for (int i = 0; i < blocksList.Count; i++)
+            {
+                buttonList[i].Enabled = false;
+                buttonList[i].BackgroundImage = Properties.Resources.smile;
+            }
+            pauseButton.BackgroundImage = Properties.Resources.sunnies;
+            endLabel.Visible = true;
+            endLabel.Text = "you won!";
+            gameOver = true;
+            if (score < highScore.checkList[9].time)//if player got a high score they can enter their name
+            {
+                form = this.FindForm();
+                form.Controls.Remove(this);
+                HighScore hs = new HighScore(score,diff);
+                form.Controls.Add(hs);
+            }
+        }
+
         #region Buttons in game
         private void themeButton_Click(object sender, EventArgs e)
         {
-            theme++;
+            theme++;//changes the theme of the game
             if (theme % 2 == 0)
             {
                 this.BackColor = (Color.White);
@@ -113,11 +124,10 @@ namespace M1N3SW33P3R
                 timerLabel.ForeColor = (Color.White);
             }
         }
-
         private void pauseButton_Click(object sender, EventArgs e)
         {
             pause++;
-            if (pause % 2 == 0)
+            if (pause % 2 == 0)//pauses game, and if gameOver==true can restart game
             {
                 timer1.Stop();
                 stopwatch.Stop();
@@ -126,159 +136,47 @@ namespace M1N3SW33P3R
                     buttonList[i].Enabled = false;
                 }
             }
+            else if (gameOver)
+            {
+                endLabel.Visible = false;//opens new Gamescreen, and resets everthing
+                form = this.FindForm();
+                form.Controls.Remove(this);
+                GameScreen gs = new GameScreen(size,diff, form);
+                form.Controls.Add(gs);
+            }
             else
             {
-                timer1.Start();
+                timer1.Start();// starts game again
                 stopwatch.Start();
                 for (int i = 0; i < buttonList.Count; i++)
                 {
                     buttonList[i].Enabled = true;
                 }
             }
+        }
 
+        private void modeButton_Click(object sender, EventArgs e)
+        {
+            mode = !mode;
+            grid.GetMode(mode);//changes the game's click mode from uncover to flaging
+            if (mode)
+            {
+                modeButton.BackgroundImage = Properties.Resources.clickedFlagBlock;
+            }
+            else
+            {//
+                modeButton.BackgroundImage = Properties.Resources.flagBlock;
+            }
+        }
+        
+        public void Click(int i)
+        {
+            grid.Click(i);//click method- checks if user clicks blocks or not
+        }
+        public void Flag(int i)
+        {
+            grid.Flag(i);//flag method- checks if user clicks blocks or not
         }
         #endregion
-        private void MyButtonClickHandler(object sender, MouseEventArgs e)
-        {
-            Button button = (Button)sender;
-            int i = buttonList.IndexOf(button);
-            if (e.Button == MouseButtons.Left)
-            {
-                buttonList[i].BackgroundImage = Properties.Resources.night1;
-                // OpenUp(i);
-                NumberOfMines(blocksList[i].numMines, i);
-            }
-            if (e.Button == MouseButtons.Right)
-            {
-                buttonList[i].BackgroundImage = Properties.Resources.flagBlock;
-            }
-
-
-            //if (blocksList[i].mine = true)
-            //{
-            //    OnStart();
-            //}
-        }
-        private void MakeMines()
-        {
-            Random rnd = new Random();
-            for (int i = 0; i < numOfMines; i++)
-            {
-                int randomBlock = rnd.Next(0, blocksList.Count);
-                if (blocksList[randomBlock].mine == false)
-                {
-                    blocksList[randomBlock].mine = true;
-                }
-                else
-                {
-                    i--;
-                }
-            }
-        }
-        private void PlaceNumbers()
-        {
-            for (int i = 0; i < blocksList.Count; i++)
-            {
-                mineCount = 0;
-
-                if (i < blocksList.Count - 1 && blocksList[i + 1].mine == true)
-                {
-                    mineCount++;
-                }
-                if (i > 1 && blocksList[i - 1].mine == true)
-                {
-                    mineCount++;
-                }
-                if (i < blocksList.Count - gridLength - 1 && blocksList[i + 9].mine == true)
-                {
-                    mineCount++;
-                }
-                if (i > gridLength - 1 && blocksList[i - 9].mine == true)
-                {
-                    mineCount++;
-                }
-                if (i < blocksList.Count - gridLength && blocksList[i + gridLength].mine == true)
-                {
-                    mineCount++;
-                }
-                if (i > gridLength && blocksList[i - gridLength].mine == true)
-                {
-                    mineCount++;
-                }
-                if (i < buttonList.Count - (gridLength - 1) && blocksList[i + gridLength + 1].mine == true)
-                {
-                    mineCount++;
-                }
-                if (i > gridLength + 1 && blocksList[i - (gridLength + 1)].mine == true)
-                {
-                    mineCount++;
-                }
-                blocksList[i].numMines = mineCount;
-            }
-        }
-        private void OpenUp(int n)
-        {
-            for (int i = 0; i < blocksList.Count; i++)
-            {
-                if (blocksList[i - 1].mine == false && blocksList[i - 1].numMines == 0)
-                {
-                    blocksList[i - 1].clicked = true;
-                    buttonList[i - 1].BackgroundImage = Properties.Resources.blankBlock;
-                    int sub = (blocksList[i - 2].x - 10) / 30;
-                    int z = 0;
-                    for (int j = gridLength - sub; j > 0; j--)
-                    {
-                        if (blocksList[i - z].mine == false && blocksList[i - z].numMines == 0)
-                        {
-
-                        }
-                        z++;
-                    }
-                }
-            }
-        }
-        private void NumberOfMines(int mineCount, int i)
-        {
-            if (mineCount == 0)
-            {
-                buttonList[i].BackgroundImage = Properties.Resources.blankBlock;
-            }
-            if (mineCount == 1)
-            {
-                buttonList[i].BackgroundImage = Properties.Resources.oneBlock;
-            }
-            if (mineCount == 2)
-            {
-                buttonList[i].BackgroundImage = Properties.Resources.twoBlock;
-            }
-            if (mineCount == 3)
-            {
-                buttonList[i].BackgroundImage = Properties.Resources.threeBlock;
-            }
-            if (mineCount == 4)
-            {
-                buttonList[i].BackgroundImage = Properties.Resources.fourBlock;
-            }
-            if (mineCount == 5)
-            {
-                buttonList[i].BackgroundImage = Properties.Resources.fiveBlock;
-            }
-            if (mineCount == 6)
-            {
-                buttonList[i].BackgroundImage = Properties.Resources.oneBlock;
-            }
-            if (mineCount == 7)
-            {
-                buttonList[i].BackgroundImage = Properties.Resources.sevenBlock;
-            }
-            if (mineCount == 8)
-            {
-                buttonList[i].BackgroundImage = Properties.Resources.eightBlock;
-            }
-            if (blocksList[i].mine == true)
-            {
-                buttonList[i].BackgroundImage = Properties.Resources.mineBlock;
-            }
-        }
     }
 }

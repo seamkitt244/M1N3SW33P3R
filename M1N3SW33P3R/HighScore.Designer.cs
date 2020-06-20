@@ -30,15 +30,18 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.firstLabel = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.fifthLabel = new System.Windows.Forms.Label();
+            this.fourthLabel = new System.Windows.Forms.Label();
+            this.thirdLabel = new System.Windows.Forms.Label();
+            this.secondLabel = new System.Windows.Forms.Label();
+            this.sixthLabel = new System.Windows.Forms.Label();
+            this.seventhLabel = new System.Windows.Forms.Label();
+            this.ninthLabel = new System.Windows.Forms.Label();
+            this.eighthLabel = new System.Windows.Forms.Label();
+            this.tenthLabel = new System.Windows.Forms.Label();
+            this.nameTextbox = new System.Windows.Forms.TextBox();
+            this.nameLabel = new System.Windows.Forms.Label();
+            this.submitButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -57,110 +60,148 @@
             this.firstLabel.AutoSize = true;
             this.firstLabel.BackColor = System.Drawing.Color.Transparent;
             this.firstLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.firstLabel.Location = new System.Drawing.Point(181, 130);
+            this.firstLabel.Location = new System.Drawing.Point(18, 110);
             this.firstLabel.Name = "firstLabel";
             this.firstLabel.Size = new System.Drawing.Size(190, 42);
             this.firstLabel.TabIndex = 1;
             this.firstLabel.Text = "1. Tommy";
+            this.firstLabel.Visible = false;
             // 
-            // label3
+            // fifthLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(183, 329);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(208, 42);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "5. Wonada";
+            this.fifthLabel.AutoSize = true;
+            this.fifthLabel.BackColor = System.Drawing.Color.Transparent;
+            this.fifthLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fifthLabel.Location = new System.Drawing.Point(16, 570);
+            this.fifthLabel.Name = "fifthLabel";
+            this.fifthLabel.Size = new System.Drawing.Size(208, 42);
+            this.fifthLabel.TabIndex = 3;
+            this.fifthLabel.Text = "5. Wonada";
+            this.fifthLabel.Visible = false;
             // 
-            // label4
+            // fourthLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(183, 287);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(220, 42);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "4. Tarrence";
+            this.fourthLabel.AutoSize = true;
+            this.fourthLabel.BackColor = System.Drawing.Color.Transparent;
+            this.fourthLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fourthLabel.Location = new System.Drawing.Point(18, 469);
+            this.fourthLabel.Name = "fourthLabel";
+            this.fourthLabel.Size = new System.Drawing.Size(220, 42);
+            this.fourthLabel.TabIndex = 4;
+            this.fourthLabel.Text = "4. Tarrence";
+            this.fourthLabel.Visible = false;
             // 
-            // label5
+            // thirdLabel
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(181, 241);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(192, 42);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "3. Touling";
+            this.thirdLabel.AutoSize = true;
+            this.thirdLabel.BackColor = System.Drawing.Color.Transparent;
+            this.thirdLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.thirdLabel.Location = new System.Drawing.Point(18, 358);
+            this.thirdLabel.Name = "thirdLabel";
+            this.thirdLabel.Size = new System.Drawing.Size(192, 42);
+            this.thirdLabel.TabIndex = 5;
+            this.thirdLabel.Text = "3. Touling";
+            this.thirdLabel.Visible = false;
             // 
-            // label6
+            // secondLabel
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(181, 192);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(190, 42);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "2. Tammy";
+            this.secondLabel.AutoSize = true;
+            this.secondLabel.BackColor = System.Drawing.Color.Transparent;
+            this.secondLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.secondLabel.Location = new System.Drawing.Point(16, 245);
+            this.secondLabel.Name = "secondLabel";
+            this.secondLabel.Size = new System.Drawing.Size(190, 42);
+            this.secondLabel.TabIndex = 6;
+            this.secondLabel.Text = "2. Tammy";
+            this.secondLabel.Visible = false;
             // 
-            // label2
+            // sixthLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(183, 371);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(163, 42);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "6. Ladar";
+            this.sixthLabel.AutoSize = true;
+            this.sixthLabel.BackColor = System.Drawing.Color.Transparent;
+            this.sixthLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sixthLabel.Location = new System.Drawing.Point(287, 110);
+            this.sixthLabel.Name = "sixthLabel";
+            this.sixthLabel.Size = new System.Drawing.Size(163, 42);
+            this.sixthLabel.TabIndex = 7;
+            this.sixthLabel.Text = "6. Ladar";
+            this.sixthLabel.Visible = false;
             // 
-            // label7
+            // seventhLabel
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(183, 413);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(193, 42);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "7. Gorege";
+            this.seventhLabel.AutoSize = true;
+            this.seventhLabel.BackColor = System.Drawing.Color.Transparent;
+            this.seventhLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.seventhLabel.Location = new System.Drawing.Point(287, 217);
+            this.seventhLabel.Name = "seventhLabel";
+            this.seventhLabel.Size = new System.Drawing.Size(193, 42);
+            this.seventhLabel.TabIndex = 8;
+            this.seventhLabel.Text = "7. Gorege";
+            this.seventhLabel.Visible = false;
             // 
-            // label8
+            // ninthLabel
             // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(180, 497);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(191, 42);
-            this.label8.TabIndex = 9;
-            this.label8.Text = "9. RAndal";
+            this.ninthLabel.AutoSize = true;
+            this.ninthLabel.BackColor = System.Drawing.Color.Transparent;
+            this.ninthLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ninthLabel.Location = new System.Drawing.Point(286, 437);
+            this.ninthLabel.Name = "ninthLabel";
+            this.ninthLabel.Size = new System.Drawing.Size(191, 42);
+            this.ninthLabel.TabIndex = 9;
+            this.ninthLabel.Text = "9. RAndal";
+            this.ninthLabel.Visible = false;
             // 
-            // label9
+            // eighthLabel
             // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(181, 455);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(190, 42);
-            this.label9.TabIndex = 10;
-            this.label9.Text = "8. botsam";
+            this.eighthLabel.AutoSize = true;
+            this.eighthLabel.BackColor = System.Drawing.Color.Transparent;
+            this.eighthLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eighthLabel.Location = new System.Drawing.Point(287, 326);
+            this.eighthLabel.Name = "eighthLabel";
+            this.eighthLabel.Size = new System.Drawing.Size(190, 42);
+            this.eighthLabel.TabIndex = 10;
+            this.eighthLabel.Text = "8. botsam";
+            this.eighthLabel.Visible = false;
             // 
-            // label10
+            // tenthLabel
             // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(170, 539);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(247, 42);
-            this.label10.TabIndex = 11;
-            this.label10.Text = "10. Seamsus";
+            this.tenthLabel.AutoSize = true;
+            this.tenthLabel.BackColor = System.Drawing.Color.Transparent;
+            this.tenthLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tenthLabel.Location = new System.Drawing.Point(286, 541);
+            this.tenthLabel.Name = "tenthLabel";
+            this.tenthLabel.Size = new System.Drawing.Size(247, 42);
+            this.tenthLabel.TabIndex = 11;
+            this.tenthLabel.Text = "10. Seamsus";
+            this.tenthLabel.Visible = false;
+            // 
+            // nameTextbox
+            // 
+            this.nameTextbox.Location = new System.Drawing.Point(150, 228);
+            this.nameTextbox.Name = "nameTextbox";
+            this.nameTextbox.Size = new System.Drawing.Size(231, 31);
+            this.nameTextbox.TabIndex = 12;
+            // 
+            // nameLabel
+            // 
+            this.nameLabel.AutoSize = true;
+            this.nameLabel.BackColor = System.Drawing.Color.Transparent;
+            this.nameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameLabel.Location = new System.Drawing.Point(104, 175);
+            this.nameLabel.Name = "nameLabel";
+            this.nameLabel.Size = new System.Drawing.Size(320, 42);
+            this.nameLabel.TabIndex = 13;
+            this.nameLabel.Text = "Enter Your Name";
+            // 
+            // submitButton
+            // 
+            this.submitButton.Location = new System.Drawing.Point(177, 291);
+            this.submitButton.Name = "submitButton";
+            this.submitButton.Size = new System.Drawing.Size(168, 77);
+            this.submitButton.TabIndex = 14;
+            this.submitButton.Text = "Submit";
+            this.submitButton.UseVisualStyleBackColor = true;
+            this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
             // 
             // HighScore
             // 
@@ -168,15 +209,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::M1N3SW33P3R.Properties.Resources.gameStart;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.submitButton);
+            this.Controls.Add(this.nameLabel);
+            this.Controls.Add(this.nameTextbox);
+            this.Controls.Add(this.tenthLabel);
+            this.Controls.Add(this.eighthLabel);
+            this.Controls.Add(this.ninthLabel);
+            this.Controls.Add(this.seventhLabel);
+            this.Controls.Add(this.sixthLabel);
+            this.Controls.Add(this.secondLabel);
+            this.Controls.Add(this.thirdLabel);
+            this.Controls.Add(this.fourthLabel);
+            this.Controls.Add(this.fifthLabel);
             this.Controls.Add(this.firstLabel);
             this.Controls.Add(this.label1);
             this.Name = "HighScore";
@@ -190,14 +234,17 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label firstLabel;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label fifthLabel;
+        private System.Windows.Forms.Label fourthLabel;
+        private System.Windows.Forms.Label thirdLabel;
+        private System.Windows.Forms.Label secondLabel;
+        private System.Windows.Forms.Label sixthLabel;
+        private System.Windows.Forms.Label seventhLabel;
+        private System.Windows.Forms.Label ninthLabel;
+        private System.Windows.Forms.Label eighthLabel;
+        private System.Windows.Forms.Label tenthLabel;
+        private System.Windows.Forms.TextBox nameTextbox;
+        private System.Windows.Forms.Label nameLabel;
+        private System.Windows.Forms.Button submitButton;
     }
 }

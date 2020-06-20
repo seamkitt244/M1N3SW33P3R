@@ -12,10 +12,12 @@ namespace M1N3SW33P3R
 {
     public partial class StartMenu : UserControl
     {
-        public static int difficulty;
-        public static int boardSize;
-        public StartMenu()
+        int difficulty= 1;
+        public static int boardSize =10;
+        Form form;
+        public StartMenu(Form _form)
         {
+            form = _form;
             InitializeComponent();
         }
 
@@ -44,11 +46,21 @@ namespace M1N3SW33P3R
             if (thirtyButton.Checked)
             {
                 boardSize = 30;
+                form.Location = new Point(Width/2, Height-300);
+                form.Size = new Size(640,690);
             }
+            form = this.FindForm();
+            form.Controls.Remove(this);
+            GameScreen gs = new GameScreen(boardSize,difficulty,form);
+            form.Controls.Add(gs);
+        }
+
+        private void highScoreButton_Click(object sender, EventArgs e)
+        {
             Form f = this.FindForm();
             f.Controls.Remove(this);
-            GameScreen gs = new GameScreen(boardSize);
-            f.Controls.Add(gs);
+            HighScore hs = new HighScore(difficulty);
+            f.Controls.Add(hs);
         }
     }
 }
